@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/ashishuniyal/Downloads/ml-flow/mlruns/606783375233873416/1c6b2d5b909041df93e6e00b960de019/artifacts
+end_time: 1721450907230
+entry_point_name: ''
+experiment_id: '606783375233873416'
+lifecycle_stage: active
+run_id: 1c6b2d5b909041df93e6e00b960de019
+run_name: wistful-ant-659
+run_uuid: 1c6b2d5b909041df93e6e00b960de019
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1721450907221
+status: 4
+tags: []
+user_id: ashishuniyal

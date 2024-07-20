@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/ashishuniyal/Downloads/ml-flow/mlruns/606783375233873416/7a5b5ec81e77451ea47eab08fd95aef4/artifacts
+end_time: 1721450719202
+entry_point_name: ''
+experiment_id: '606783375233873416'
+lifecycle_stage: active
+run_id: 7a5b5ec81e77451ea47eab08fd95aef4
+run_name: charming-mare-759
+run_uuid: 7a5b5ec81e77451ea47eab08fd95aef4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1721450719193
+status: 4
+tags: []
+user_id: ashishuniyal

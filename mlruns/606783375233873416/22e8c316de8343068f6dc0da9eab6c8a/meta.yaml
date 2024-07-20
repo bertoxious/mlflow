@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/ashishuniyal/Downloads/ml-flow/mlruns/606783375233873416/22e8c316de8343068f6dc0da9eab6c8a/artifacts
+end_time: 1721450935173
+entry_point_name: ''
+experiment_id: '606783375233873416'
+lifecycle_stage: active
+run_id: 22e8c316de8343068f6dc0da9eab6c8a
+run_name: aged-smelt-401
+run_uuid: 22e8c316de8343068f6dc0da9eab6c8a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1721450935165
+status: 4
+tags: []
+user_id: ashishuniyal
