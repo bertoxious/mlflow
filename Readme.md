@@ -32,6 +32,9 @@ After running mlflow ui here is the output folder structure
 ├──────meta.yml(contains the meta data information of experiment)
 |──────multiple Runs folder(This can have one to many run folders depending upon the number of runs done by the user)
 
+NOTE :: The run folder structure is from top to bottom bottom being the latest run folder
+
+
 ```
 
 meta.yml values
@@ -58,19 +61,19 @@ user_id: ashishuniyal
 ```tree
 ├── 1c6b2d5b909041df93e6e00b960de019
 ├──── artifacts
-|     ├─── mymodel
+|     ├─── sklearn_log_model ( mlflow.sklearn.log_model(lr, "sklearn_log_model") )
 |     |    ├─── conda.yml
 |     |    ├─── ML model
 |     |    ├─── model.pkl
 |     |    ├─── python_env.yml
 |     |    ├─── requirements.txt
-├──── metrics (contains all the metrics logs with each metric file name in mlflow.log_metric("", metric))
-|     ├──── metric_one
-|     ├──── metric_two
-|     ├──── metric_three
-├──── params (contains all the params logs with each log file name in mlflow.log_param("", metric))
-|     ├──── param_one
-|     ├──── param_two
+├──── metrics (contains all the metrics logs with each metric file name in mlflow.log_metric("mae", metric))
+|     ├──── mae
+|     ├──── r2
+|     ├──── rmse
+├──── params (contains all the params logs with each log file name in mlflow.log_param("alpha", metric))
+|     ├──── alpha
+|     ├──── l1_ratio
 ├──── tags (contains other meta data for the run)
 ├──── meta.yml (contains meta data of the run just like in experiment meta.yml)
 ```
