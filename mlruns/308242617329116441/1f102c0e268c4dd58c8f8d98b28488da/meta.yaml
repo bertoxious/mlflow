@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/ashishuniyal/Downloads/ml-flow/mlruns/308242617329116441/1f102c0e268c4dd58c8f8d98b28488da/artifacts
+end_time: 1721476992451
+entry_point_name: ''
+experiment_id: '308242617329116441'
+lifecycle_stage: active
+run_id: 1f102c0e268c4dd58c8f8d98b28488da
+run_name: capricious-snipe-0
+run_uuid: 1f102c0e268c4dd58c8f8d98b28488da
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1721476991153
+status: 3
+tags: []
+user_id: ashishuniyal

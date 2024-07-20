@@ -77,3 +77,29 @@ user_id: ashishuniyal
 ├──── tags (contains other meta data for the run)
 ├──── meta.yml (contains meta data of the run just like in experiment meta.yml)
 ```
+
+
+Model Components
+- Storage Format : How model is packaged and saved
+
+Model Signature
+- Defines schema for input and output
+  - Column based : Each column of input is treated as a separate feature and is given a unique name and data type 
+  - Tensor based : Multi-dimensional array or tensor/ Only supported by deep learning flavors such as Tensorflow, Keras, Pytorch, Onyx and Gluon
+
+- Signature enforcement
+  - Process of Defining and validating the input and output schema for machine learning model
+  - 3 Types
+    - Signature Enforcement :
+      - aka schema enforcement checks input provided to model matches the expected signature
+      - applied before the underlying model implementation is called.
+      - only applied using ml flow model deployment tools or when loading models as python_function.
+      - not applied to models that are loaded in native format.
+      - Important in production environments where consistency and accuracy are important.
+    - Name-ordering Enforcement
+      - input names should be match and extra inputs are ignored and raise expectations for missing inputs.
+    - Input-type Enforcement
+      - does input types provided to the model matches
+      - Valid conversion int to long or double 
+      - Invalid conversion long to double 
+      - Lenient for colum based signature but strict for tensor based signature

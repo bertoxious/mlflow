@@ -1,6 +1,8 @@
 import warnings
 import argparse
 import logging
+from inspect import signature
+
 import pandas as pd
 import numpy as np
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
@@ -8,7 +10,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import ElasticNet
 import mlflow
 import mlflow.sklearn
-
+from mlflow.models.signature import  ModelSignature, infer_signature
+from mlflow.types.schema import  Schema,ColSpec
 logging.basicConfig(level=logging.WARN)
 logger = logging.getLogger(__name__)
 
@@ -46,8 +49,15 @@ if __name__ == "__main__":
 
     alpha = args.alpha
     l1_ratio = args.l1_ratio
+    mlflow.set_tracking_uri(uri="")
+
     experiment = mlflow.set_experiment(experiment_name="experiment_name")
     with mlflow.start_run(experiment_id=experiment.experiment_id):
+        # mlflow.sklearn.autolog(
+        #     log_input_examples=False,
+        #     log_model_signature=False,
+        #     log_models=False
+        # )
         lr = ElasticNet(alpha=alpha, l1_ratio=l1_ratio, random_state=42)
         lr.fit(train_x, train_y)
 
@@ -59,9 +69,19 @@ if __name__ == "__main__":
         print("  RMSE: %s" % rmse)
         print("  MAE: %s" % mae)
         print("  R2: %s" % r2)
+        print(" Experiment id : %s"% experiment.experiment_id)
+        signature = infer_signature(test_x,predicted_qualities)
+        input_example = {
+            "columns": np.array(test_x.columns),
+            "data": np.array(test_x.values)
+        }
+
+        mlflow.log_artifact("data/red-wine-quality.csv")
         mlflow.log_param("alpha  ", alpha)
         mlflow.log_param("l1_ratio ", l1_ratio)
         mlflow.log_metric("rmse", rmse)
         mlflow.log_metric("mae  ", mae)
         mlflow.log_metric("r2  ", r2)
-        mlflow.sklearn.log_model(lr, "sklearn_log_model")
+        mlflow.sklearn.log_model(lr, "sklearn_log_model", signature=signature, input_example=input_example)
+        mlflow.end_run()
+        run = mlflow.last_active_run()

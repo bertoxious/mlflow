@@ -1,6 +1,6 @@
-artifact_location: mlflow-artifacts:/0
-creation_time: 1721370219188
+artifact_location: file:///Users/ashishuniyal/Downloads/ml-flow/mlruns/0
+creation_time: 1721476991069
 experiment_id: '0'
-last_update_time: 1721370219188
+last_update_time: 1721476991069
 lifecycle_stage: active
 name: Default
